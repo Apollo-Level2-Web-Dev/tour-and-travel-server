@@ -24,6 +24,10 @@ const tourSchema = new Schema<ITour, TTourModel, ITourMethods>({
   startLocation: { type: String },
   locations: [String],
   slug: String,
+  availableSeats: {
+    type: Number,
+    required: [true, 'Please tell us your availableSeats'],
+  },
 })
 
 // StaticRange, instance
