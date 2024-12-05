@@ -18,6 +18,10 @@ const tourSchema = new Schema<ITour, TTourModel, ITourMethods>({
     type: Number,
     required: true,
   },
+  availableSeats: {
+    type: Number,
+    required: true
+  },
   coverImage: { type: String, required: true },
   images: [String],
   startDates: [Date],
