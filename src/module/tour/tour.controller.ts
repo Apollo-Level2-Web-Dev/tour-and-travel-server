@@ -22,7 +22,7 @@ const createTour = async (req: Request, res: Response) => {
 
 const getTours = async (req: Request, res: Response) => {
   try {
-    const result = await tourService.getTours()
+    const result = await tourService.getTours(req.query)
 
     res.send({
       success: true,
