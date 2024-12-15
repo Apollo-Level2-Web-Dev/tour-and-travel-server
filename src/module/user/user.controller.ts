@@ -9,8 +9,6 @@ const createUser = catchAsync(
 
   async (req, res) => {
     const payload = req.body
-    console.log({ payload });
-    console.log(payload);
 
     const result = await userService.createUser(payload)
 
