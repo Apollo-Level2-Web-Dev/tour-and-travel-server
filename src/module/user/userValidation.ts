@@ -10,7 +10,7 @@ const userValidationSchema = z.object({
         required_error: "Email must be provided and must be a string",
     }).email(),
 
-    pasword: z
+    password: z
     .string({
       required_error: 'Password is required for your safety',
     })
@@ -18,7 +18,7 @@ const userValidationSchema = z.object({
 
     age: z.number({
         required_error: "Age must be provided and must be a number",
-    }).int().positive(),
+    }).int().positive().optional(),
 
     photo: z.string({
         required_error: "Photo must be provided and must be a string",

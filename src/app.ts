@@ -1,5 +1,6 @@
 
 import express, { Request, Response } from 'express'
+import cors from 'cors'
 import { globalErrorHandler } from './middlewares/globalErrorHandler'
 import bookingRouter from './module/booking/booking.route'
 import tourRouter from './module/tour/tour.route'
@@ -10,6 +11,7 @@ const app = express()
 
 // middleware
 app.use(express.json())
+app.use(cors());
 
 app.use('/api/auth', authRouter)
 app.use('/api/user', userRouter)

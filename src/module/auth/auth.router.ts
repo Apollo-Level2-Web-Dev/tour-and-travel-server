@@ -8,6 +8,8 @@ const authRouter = Router();
 
 authRouter.post('/register', validateRequest(UserValidation.userValidationSchema), AuthControllers.register);
 authRouter.post('/login', validateRequest(AuthValidation.loginValidationSchema), AuthControllers.login);
+authRouter.post("/forget-password", validateRequest(AuthValidation.forgetPasswordValidationSchema) ,AuthControllers.forgetPassword)
+authRouter.post("/reset-password" ,AuthControllers.resetPassword)
 
 
 
