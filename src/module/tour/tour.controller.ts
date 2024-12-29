@@ -1,22 +1,18 @@
 import { Request, Response } from 'express'
 import { tourService } from './tour.service'
 import { sendImageCloudinary } from '../../helpers/fileUploadHelper';
-// import { json } from 'body-parser';
-// import { sendImageCloudinary } from '../../helpers/fileUploadHelper';
 
 const createTour = async (req: Request, res: Response) => {
   const body = JSON.parse(req.body.data)
-  console.log(body)
   try {
-
     if(req.file){
-      const imageName = `hello`;
+      const imageName= "hello";
       const path = req.file.path
-      // console.log(path)
       const {secure_url} = await sendImageCloudinary(imageName,path)
-      body.coverImage =secure_url as string
+      body.coverImage= secure_url
     }
-    // const body = JSON.parse(req.body)
+    
+    // console.log(body)
     const result = await tourService.createTour(body)
     
     res.send({
